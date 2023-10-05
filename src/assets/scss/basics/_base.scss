@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    background-color: $black;
+    color: $white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    ::selection {
+        // color: $red;
+        // background: $white;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+// ::-webkit-scrollbar {
+//     width: 10px;
+// }
