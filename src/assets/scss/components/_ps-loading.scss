@@ -1,0 +1,121 @@
+.ps-load {
+    height: 100vh;
+    transition: 0.2s;
+
+    &.loaded {
+        animation: fade 0.5s 1 forwards ease-in-out;
+    }
+
+    svg {
+        background-color: white;
+        border-radius: 50%;
+        padding: 3px;
+        z-index: 5;
+        cursor: pointer;
+        animation: ps-pulse 2.5s infinite cubic-bezier(0, .84, .43, .76);
+    }
+
+    .ps-center {
+
+        .circle {
+            position: absolute;
+            // width: 100px;
+            // height: 100px;
+        }
+
+        .inner-circle {
+            border-radius: 50%;
+            outline: white 3px solid;
+            width: 0;
+            height: 0;
+
+            animation: expand-circle-inner 2.5s infinite cubic-bezier(0, .84, .43, .76);
+        }
+
+        .outer-circle {
+            border-radius: 50%;
+            outline: white 4px solid;
+            width: 50px;
+            height: 50px;
+            animation: expand-circle-outer 2.5s infinite cubic-bezier(0, .84, .43, .76);
+        }
+
+        .faded-circle {
+            border-radius: 50%;
+            outline: white 15px solid;
+            width: 0px;
+            height: 0px;
+            filter: blur(15px) opacity(0.5);
+            animation: expand-circle-faded 2.5s infinite cubic-bezier(0, .84, .43, .76);
+        }
+    }
+}
+
+@keyframes expand-circle-inner {
+    50% {}
+
+    80% {
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes expand-circle-outer {
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+
+        opacity: 0;
+    }
+
+    70% {
+        width: 100px;
+        height: 100px;
+    }
+
+    80% {
+        opacity: 0;
+
+    }
+
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes expand-circle-faded {
+    80% {
+        width: 80px;
+        height: 80px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+    }
+}
+
+@keyframes ps-pulse {
+    10% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

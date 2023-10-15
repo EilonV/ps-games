@@ -4,6 +4,11 @@
     }
 }
 
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
 @keyframes fade-in {
     to {
         opacity: 1;

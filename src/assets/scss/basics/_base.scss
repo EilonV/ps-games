@@ -6,6 +6,7 @@ html {
     height: 100vh;
     background-color: $black;
     color: $white;
+    font-family: SST;
 }
 
 body {
@@ -44,6 +45,19 @@ ul {
     margin: 0;
 }
 
-// ::-webkit-scrollbar {
-//     width: 10px;
-// }
+::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 14px;
+    // background: $scroll-grey;
+    background: $scroll-grey;
+}
