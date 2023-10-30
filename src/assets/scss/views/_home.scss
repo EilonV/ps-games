@@ -6,10 +6,14 @@
         gap: 10px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: auto;
+        width: 50%;
 
         .game {
             width: 100%;
             position: relative;
+            overflow: hidden;
+
 
             h2 {
                 position: absolute;
@@ -21,11 +25,30 @@
 
             img {
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
                 aspect-ratio: 1/1;
             }
 
+            .no-img {
+                aspect-ratio: 1/1;
+                background-color: $grey;
+                display: flex;
+
+                svg {
+                    transform: scale(1.5);
+                    align-self: center;
+                    width: 100%;
+
+                    path {
+                        fill: $black;
+                    }
+                }
+
+            }
+
             .game-img-wrapper {
+                transition: 0.5s;
 
                 &::after {
                     content: '';
@@ -37,7 +60,50 @@
                     z-index: 10;
                     background: linear-gradient($grad-black 0%, rgba(255, 255, 255, 0) 30%);
                 }
+
+                &:hover {
+                    transition: 0.5s;
+
+                    .tags {
+                        transform: translateY(0);
+                    }
+                }
+
+                .tags {
+                    transition: 0.5s;
+                    position: absolute;
+                    transform: translateY(200%);
+                    bottom: 10px;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 0 5px;
+
+                    .tag {
+                        background-color: $light-blue;
+                        border-radius: 30px;
+                        padding: 3px 6px;
+                        color: black;
+                        font-weight: 700;
+                        font-size: 14px;
+                        height: fit-content;
+                    }
+
+                    .genres {
+                        display: flex;
+                        gap: 5px;
+                        left: 5px;
+                        align-self: flex-end;
+                    }
+
+                    .platforms {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+                    }
+                }
             }
+
         }
     }
 
@@ -45,7 +111,7 @@
         top: 0;
         position: absolute;
         z-index: -1;
-        
+
         canvas {
             position: fixed;
         }
